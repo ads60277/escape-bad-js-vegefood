@@ -6,17 +6,15 @@ let data = [];
 function renderData(input) {
   let str = '';
   input.forEach((b) => {
-    // TODO: 改成 ES6 的 Template Literals (字面字串符)
-    const content = `
-      <tr>
-      <td>${b.作物名稱}</td>
-      <td>${b.市場名稱}</td>
-      <td>${b.上價}</td>
-      <td>${b.中價}</td>
-      <td>${b.下價}</td>
-      <td>${b.平均價}</td>
-      <td>${b.交易量}</td>
-      </tr>`;
+  // TODO: 改成 ES6 的 Template Literals (字面字串符)
+    const content = `<tr><td>${b.作物名稱
+    }</td><td>${b.市場名稱
+    }</td><td>${b.上價
+    }</td><td>${b.中價
+    }</td><td>${b.下價
+    }</td><td>${b.平均價
+    }</td><td>${b.交易量
+    }</td></tr>`;
     str += content;
   });
   table.innerHTML = str;
@@ -28,6 +26,7 @@ axios.get(url)
     // TODO: 之後拆成 renderData 函式
     renderData(data);
   });
+
 let showData = [];
 
 let category = '';
@@ -53,4 +52,5 @@ function filterCategory(e) {
     table.innerHTML = str;
   }
 }
+
 filter.addEventListener('click', filterCategory);
