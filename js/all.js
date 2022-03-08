@@ -22,13 +22,12 @@ function renderData(input) {
   table.innerHTML = str;
 }
 
-this.$axios.get(url)
+axios.get(url)
   .then((res) => {
     data = res.data.filter((a) => a.作物名稱);
     // TODO: 之後拆成 renderData 函式
     renderData(data);
   });
-
 let showData = [];
 
 let category = '';
@@ -54,4 +53,4 @@ function filterCategory(e) {
     table.innerHTML = str;
   }
 }
-filter.addEventListener('click', filterCategory());
+filter.addEventListener('click', filterCategory);
